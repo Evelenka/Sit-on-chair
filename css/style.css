@@ -1,0 +1,798 @@
+html, body {
+    font-family: Raleway, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    color: white;
+}
+
+header .logo_nav {    
+    float: left;
+    width: 30%; 
+    text-transform: uppercase;    
+}
+
+header .logo_nav>p {
+    font-weight: 700;
+    line-height: 3em;
+}
+
+header nav {
+    float: right;    
+}
+
+header .main_nav {
+    text-align: right;    
+}
+
+header .main_nav>li {
+    display: inline-block;
+    width: 10vw;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+header li:hover>ul {
+    display: block;
+}
+
+header .main_nav ul {
+    position: absolute;
+    top: 1.7em; /* pozycja dla drugiego ul*/
+    left: 0;
+    right: 0;
+}
+
+header .sub_nav {
+    display: none; /*ukrywa rozwijane menu*/
+}
+
+header .sub_nav li {
+    background: #000;
+    text-transform: none;
+    line-height: 2.5em;
+    text-align: left;
+}
+header .sub_nav li:first-child {
+    text-align: center;
+    background-color: transparent; 
+}
+
+header .sub_nav .triangle {
+    border: 15px solid #000;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    padding: 8px; /*odstep w sub_nav*/
+    color: white;
+    
+}
+
+.span_green {
+    color: rgb(37,199,176);
+    font-weight: 700;
+}
+
+/* ------------------ SLIDER ------------------ */
+
+.slider {
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 46%, rgba(207,207,215,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 46%,rgba(207,207,215,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 46%,rgba(207,207,215,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cfcfd7',GradientType=0 ); /* IE6-9 */
+    
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.slider_wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    top: auto;
+    display: flex;
+}
+
+.image_slider {
+    position: relative;
+    height: 100%;
+    list-style: none;
+    overflow: hidden;
+    float: left;
+}
+
+.image_slider {
+    width: 50%;
+    height: 100%;
+    float: left;    
+}
+
+.image_slider li {
+    position: relative;
+    float: left;
+    display: none;
+}
+
+.image_slider .visible {
+    display: inline-block;
+}
+
+.fa-chevron-left {  
+    color: rgb(37,199,176); 
+    position: absolute;
+    align-self: center;
+    left: 0;
+	opacity: 0.4;
+    z-index: 1;
+}
+
+.fa-chevron-right {
+    color: rgb(37,199,176);
+    position: absolute;
+    align-self: center;
+    right: 0;
+    opacity: 0.4; 
+    z-index: 1;
+}
+
+.slider_wrapper:hover i {  
+    opacity: 1;
+}
+
+.text-slide {
+    width: 50%;
+    float: left;
+    margin-right: 8%;
+}
+
+.text-slide>h1 {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 15%;
+    text-align: center;
+}
+
+.text-slide>p {
+    font-size: 0.95em;
+    line-height: 1.6em;
+    padding: 5% 8%;    
+    text-align: center;
+}
+
+[type="button"] {
+    background-color: rgb(37,199,176);
+    box-shadow: 0;
+    border: rgb(37,199,176);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    margin-left: 30%;
+}
+
+/* ------------------ GALLERY ------------------ */
+
+#gallery {
+    height: 350px;    
+}
+
+#gallery>.container {
+    display: flex;
+    justify-content: space-between;    
+}
+
+#gallery div[class*="box"] {
+    width: 31%;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid gainsboro;
+    height: 225px;
+    background-color: white;
+    position: relative;    
+}
+
+#gallery div[class*="box"]:first-child {
+    margin-left: 0;
+}
+
+#gallery .topic {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    height: 30%;
+    line-height: 60px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+
+#gallery .green_line {
+    height: 6px;
+    width: 40%;
+    position: absolute;
+    top: 60%;
+    background-color: rgb(37,199,176);
+}
+
+#gallery .short_text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(255,255,255, 0.5);
+    display: none;
+}
+
+#gallery div[class*="box"]:hover .topic {
+    opacity: 0;
+}
+
+#gallery div[class*="box"]:hover .short_text {
+    display: block;
+    color: rgb(101,101,101);
+    font-size: 0.88em;
+}
+
+#gallery .box_1 {
+    background-image: url("../images/box1_img.jpg");
+}
+
+#gallery .box_2 {
+    background-image: url("../images/box2_img.jpg");
+}
+
+#gallery .box_3 h3 {
+    font-weight: 700;
+    padding-top: 30px;
+    padding-left: 20px;    
+}
+
+#gallery .box_3 .green_line2 {
+    height: 6px;
+    width: 40%;
+    top: 22%;
+    margin-left: 20px;
+    position: absolute;
+    background-color: rgb(37,199,176);
+}
+
+#gallery .box_3 p {
+    font-size: 0.88em;
+    color: darkgrey;
+    line-height: 1.5em;
+    padding-top: 1em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+}
+
+/* ------------------ PRICES ------------------ */
+
+h3.title_section {
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+h3.title_section span {
+    width: 315px;    
+    border-bottom: 7px solid rgb(37,199,176);
+    padding-bottom: 10px;
+    margin: 45px 0;
+    display: inline-block;
+}
+
+#prices { 
+    background-color: rgb(241,241,241);
+    height: 725px;
+}
+#prices .div_prices {
+    height: 585px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+#prices .prices_box {
+    border: 3px solid gainsboro;
+    width: 30%;
+    height: 90%; 
+    position: relative;    
+    float: left;
+    margin: 15px 0;
+    background-color: white;
+}
+
+#prices .circle {
+    line-height: 45px;
+    text-align: center;
+    border: 3px solid gainsboro;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    background-color: white;
+    left: 50%;
+    margin-left: -20px;
+}
+
+#prices .circle .dot {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(198,198,198);
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+#prices .prices_box h3 {
+    text-transform: uppercase;
+    color: rgb(37,199,176);
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 25px auto;
+    text-align: center;
+}
+
+#prices .round_price {
+    text-align: center;
+    border: 3px solid gainsboro;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#prices .round_price>p {   
+    color: rgb(178,178,178);
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+#prices .round_price>p:last-child { 
+    font-size: 1em;
+}
+
+#prices .price_include p {
+    background-color: rgb(230,230,230);
+    color: rgb(147,147,147);
+    padding: 0.4em 0;
+    font-size: 1.4em;
+    line-height: 1.5em;
+    text-align: center;   
+}
+
+#prices .price_include p:nth-child(2n) {
+    background-color: rgb(241,241,241);
+}
+
+#prices .prices_box .join {
+    width: 120px;
+    height: 35px;
+    background-color: rgb(37,199,176);
+    color: white;
+    border: none;
+    font-size: 1.3em;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 20px;
+    left: 30%;
+}
+
+#prices .prices_box:hover {
+    background-color: rgb(37,199,176);
+    border-color: rgb(37,199,176);
+}
+
+#prices .prices_box:hover h3 {
+    color: white;
+}
+
+#prices .prices_box:hover .circle {
+    background-color: rgb(37,199,176);
+    border-color: rgb(37,199,176);
+}
+
+#prices .prices_box:hover .round_price {
+    background-color: white;
+    border-color: white;
+    color: rgb(37,199,176);
+}
+
+#prices .prices_box:hover .round_price>p {
+    color: rgb(37,199,176);
+}
+
+#prices .prices_box:hover .dot {
+    background-color: white;
+    border: none;
+}
+
+#prices .prices_box:hover .join {
+    background-color: white;
+    color: rgb(37,199,176);
+}
+
+/* ------------------ CLIENT ORDER ------------------ */
+
+/* --- OPTIONS --- */
+#order {
+    width: 100%;
+    height: 440px;
+}
+
+.flex {
+    display: flex;   
+}
+
+#order .left_order {
+    width: 30%;
+}
+
+#order .drop_down_list {
+    border:1px solid rgb(37,199,176);
+    width: 100%;
+    height: 53px;
+    background-color: white;
+    margin-bottom: 0.9em;
+    padding: 0.7em;
+    position: relative;      
+    display: inline-block;
+}
+
+.list_label {
+    font-size: 1.4em;
+    color: rgb(147,147,147);
+    font-family: "Raleway", sans-serif;
+}
+
+.list_arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgb(37,199,176);
+    display: block;
+    position: absolute;
+    right: 14px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.list_panel {
+    background-color: white;
+    border: 1px solid gainsboro;
+    width: 288px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    list-style: none;
+    margin: 0;
+    left: 0;
+    z-index: 2;
+    top: 54px;
+    /* hidden by default */
+    position: absolute;
+    display: none;
+}
+
+.list_panel li {
+    margin-top:10px;
+    cursor: pointer;
+    color: rgb(147,147,147);
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+/* -- CHECKBOX -- */
+.checkbox {
+    position: relative;
+    padding: 1.5em 1.5em 1.5em 0;
+}
+
+.checkbox input {
+    display: block;
+    opacity: 0;
+    height: 45px;
+    position: absolute;
+    width: 14%;
+    cursor: pointer;
+}
+
+.checkbox label {
+    display: block;
+    padding-left: 1.8em;
+    position: relative;
+    font-size: 1.7em;
+    color: rgb(147,147,147);
+    line-height: 120%;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.checkbox label::before, .checkbox label::after {
+    border: 1px solid rgb(37,199,176);
+    content: "";
+    display: block;
+    left: 0;
+    height: 45px;
+    position: absolute;
+    width: 15%;
+    top: 0;
+}
+
+.checkbox label::after {
+    background: url("../images/form_ok.jpg") no-repeat center;
+    border: 0;
+    display: none;
+}
+
+.checkbox input:checked + label::after {
+    display: block;
+    border: 1px solid rgb(37,199,176);
+}
+
+
+.active {
+    background: url("../images/form_ok.jpg");
+    width: 48px;
+    height: 40px;
+    border: 1px solid rgb(37,199,176); 
+}
+
+/* --- CENTER ORDER --- */
+
+
+#order center_order {
+    width: 25%;
+}
+
+.center_order img {
+    margin-top: 40%;
+    margin-left: 10%;
+}
+
+/* --- SUMMARY ORDER --- */
+
+#order .summary_order {
+    width: 40%;
+    margin-left: 5%;
+}
+
+.summary_panel {
+    background-color: white;
+    width: 100%;
+    height: 200px;
+    padding: 2%;    
+}
+
+#order .summary_panel button {
+    background-color: rgb(37,199,176);
+    color: white;
+    width: 80%;
+    height: 55px;
+    border: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.panel_left {
+    display: inline-block;
+    width: 185px;
+    vertical-align: top;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+    height: 135px;
+}
+
+.panel_right {
+    display: inline-block;
+    width: 120px;
+    border-left: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    text-align: right;
+    vertical-align: top;
+    padding-bottom: 10px;
+    height: 135px;
+}
+
+.panel_left h4, .panel_right h4 {
+  color: rgb(37,199,176);
+  font-size: 1.5em;
+}
+
+.panel_left span{
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: rgb(147,147,147);
+    display: block;
+}
+
+.panel_right span {
+    display: block;
+    font-size: 1.2em;
+    color: rgb(37,199,176);
+    margin-top: 10px;
+}
+
+.sum_label{
+    display: inline-block;
+    width: 45%;
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: rgb(147,147,147);
+}
+
+.sum {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: rgb(37,199,176);
+}
+
+.title {
+    height: 30px;
+}
+
+/* ------------------ FORM ------------------ */
+
+#form_message {
+    width: 100%;
+    height: 540px; 
+}
+
+#form_message .contact_box {
+    display: flex;
+    height: 100%;
+}
+
+#form_message .form_left {
+    width: 60%;
+}
+
+#form_message .form_left input {
+    width: 100%;
+    border: 1px solid rgb(37,199,176);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5em;
+    line-height: 2em;
+    padding-left: 0.5em;
+    margin-bottom: 0.8em;
+}
+
+#form_message .form_left textarea {
+    width: 100%;
+    height: 8em;
+    border: 1px solid rgb(37,199,176);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding-left: 0.5em;
+}
+
+#form_message .form_right {
+    width: 40%;
+    color: rgb(147,147,147);
+    float: right;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3em;
+}
+
+#form_message .form_right img {
+    width: 70%;
+    height: auto;
+    align-self: center;
+    margin-bottom: 8%;
+}
+
+/*hide default checkbox*/
+#form_message .form_right input[type="checkbox"] {
+    display: none;
+}
+
+#form_message .form_right label {
+    font-size: 1.1em;    
+}
+
+#form_message .form_right input[type="checkbox"] + label {
+    background: url("../images/form_blank.jpg") no-repeat;
+    display:inline-block;
+    padding-left: 3em;
+    padding-bottom: 1em;
+}
+
+#form_message .form_right input[type="checkbox"]:checked + label {
+    background: url("../images/form_ok.jpg") no-repeat;
+    display:inline-block;
+    padding-left: 3em;
+    padding-bottom: 1em;
+}
+   
+#form_message .form_right button {
+    background-color: rgb(37,199,176);
+    color: white;
+    width: 100%;
+    height: 15%;
+    border: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-top: 1%;
+}
+
+/* ------------------ FOOTER ------------------ */
+
+footer {
+    color: rgb(178,178,178);
+    display: flex;    
+}
+
+footer .flex {
+    height: 100%;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: baseline;    
+}
+
+footer .flex .logo {
+    text-transform: uppercase;
+}
+
+footer .flex .social_icons {
+    margin-left: 20%;
+}
+
+footer .flex .social_icons>a {
+    padding: 0;
+}
+
+/* animation */
+footer .flex .social_icons img:hover {
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
