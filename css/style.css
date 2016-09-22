@@ -116,16 +116,11 @@ a {
 
 .image_slider {
     position: relative;
+    width: 50%;
     height: 100%;
     list-style: none;
     overflow: hidden;
     float: left;
-}
-
-.image_slider {
-    width: 50%;
-    height: 100%;
-    float: left;    
 }
 
 .image_slider li {
